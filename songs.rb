@@ -8,4 +8,5 @@ class Songs
     @artist_name = artist_name
   end
 
+  
 end
