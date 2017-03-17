@@ -11,6 +11,7 @@ class TestRooms < MiniTest::Test
     @room1 = Rooms.new()
     @guest1 = Guests.new("Mr Max")
     @guest2 = Guests.new("Ben")
+    @guest3 = Guests.new("Elon")
     @song1 = Songs.new("Like the way you move", "Ed Sheeran")
   end
 
@@ -25,7 +26,8 @@ class TestRooms < MiniTest::Test
   def test_check_guest_in
     @room1.check_in_guest(@guest1)
     @room1.check_in_guest(@guest2)
-    assert_equal(2, @room1.guest_list.length)
+    @room1.check_in_guest(@guest3)
+    assert_equal(1, @room1.guest_list.length)
   end
 
   def test_check_guest_out

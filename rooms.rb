@@ -10,7 +10,12 @@ class Rooms
   end
 
   def check_in_guest(guest)
-    @guest_list.push(guest)
+    if @space == 1
+      @guest_list.push(guest)
+      @space -= 1
+    else
+      puts "There is no room at the inn"
+    end
   end
 
   def check_out_guest(guest)
