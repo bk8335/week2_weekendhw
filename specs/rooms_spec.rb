@@ -42,4 +42,9 @@ class TestRooms < MiniTest::Test
     @room1.add_song_to_playlist(@song1)
     assert_equal(1, @room1.playlist.length)
   end
+
+  def test_favourite_song
+    @room1.add_song_to_playlist(@song1)
+    assert_equal("WOOOO!", @room1.favourite_song)
+  end
 end

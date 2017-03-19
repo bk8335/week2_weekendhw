@@ -1,7 +1,7 @@
 
 class Rooms
 
-  attr_reader :guest_list, :playlist, :space, :entry_fee
+  attr_accessor :guest_list, :playlist, :space, :entry_fee
 
   def initialize()
     @guest_list = []
@@ -27,8 +27,14 @@ class Rooms
 
   def add_song_to_playlist(song)
     @playlist.push(song)
-
   end
+
+  def favourite_song(song)
+    if song.song_name
+
+    end
+  end
+
 
 
 end
