@@ -29,9 +29,11 @@ class Rooms
     @playlist.push(song)
   end
 
-  def favourite_song(song)
-    if song.song_name
-
+  def favourite_song(favourite_song_name)
+    for song in @playlist
+      if song == favourite_song_name
+        print "WOOO!"
+      end
     end
   end
 

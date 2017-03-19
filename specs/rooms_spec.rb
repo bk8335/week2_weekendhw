@@ -12,7 +12,7 @@ class TestRooms < MiniTest::Test
     @guest1 = Guests.new("Mr Max", 50)
     @guest2 = Guests.new("Ben", 4)
     @guest3 = Guests.new("Elon", 86_000)
-    @song1 = Songs.new("Like the way you move", "Ed Sheeran")
+    @song1 = Songs.new("abc", "Ed Sheeran")
   end
 
   def test_rooms_guest_empty
@@ -44,7 +44,8 @@ class TestRooms < MiniTest::Test
   end
 
   def test_favourite_song
-    @room1.add_song_to_playlist(@song1)
-    assert_equal("WOOOO!", @room1.favourite_song)
+    @room1.add_song_to_playlist(@song1.song_name)
+    actual = @room1.favourite_song("abc")
+    assert_equal("WOOO!", actual)
   end
 end
